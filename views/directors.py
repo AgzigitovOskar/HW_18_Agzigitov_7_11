@@ -1,10 +1,16 @@
+# Импорт необходимых библиотек
 from flask_restx import Namespace, Resource
+
+# Импорт экземпляра класса GenreService
 from container import director_service
+
+# Импорт экземпляра класса GenreService
 from dao.model.director import DirectorSchema
 
+# Формирование нэймспейса
 directors_ns = Namespace('directors')
 
-# Формирование сереилизаторов для модели Director, одного элемента и списка
+# Формирование сереилизаторов для модели Director для одного элемента и для списка
 director_schema = DirectorSchema()
 directors_schema = DirectorSchema(many=True)
 

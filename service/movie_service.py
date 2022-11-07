@@ -5,7 +5,7 @@ class MovieService:
 
     def get_movies(self, param, data):
         """
-            Формирование запроса по параметров поиска
+            Формирование запроса в зависимости от параметров поиска
         """
         movies = self.movie_dao.get_movies()
         if param == 'director_id':
@@ -18,7 +18,7 @@ class MovieService:
 
     def get_movie(self, mid):
         """
-            Получение фильма
+            Получение фильма по id
         """
         return self.movie_dao.get_movie(mid)
 
@@ -30,12 +30,12 @@ class MovieService:
 
     def update_movie(self, data):
         """
-            Обновление фильма
+            Обновление фильма по id
         """
         return self.movie_dao.update_movie(data)
 
     def delete_movie(self, mid):
         """
-            Удаление фильма
+            Удаление фильма по id
         """
         self.movie_dao.delete_movie(mid)

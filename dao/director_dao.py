@@ -5,14 +5,14 @@ class DirectorDAO:
     def __init__(self, session):
         self.session = session
 
-    def get_one(self, did):
+    def get_directors(self):
         """
-            Получение директора
-        """
-        return self.session.query(Director).filter(Director.id == did)
-
-    def get_all(self):
-        """
-            Получение директоров
+            Получение всех директоров
         """
         return self.session.query(Director).all()
+
+    def get_director(self, did):
+        """
+            Получение диерктора по id
+        """
+        return self.session.query(Director).filter(Director.id == did)
